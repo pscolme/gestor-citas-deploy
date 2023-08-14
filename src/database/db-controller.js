@@ -28,6 +28,7 @@ const _getUser =  async (req, res) => {
 };
 
 const _getUsers =  async (req, res) => {
+  console.log(req.header('origin'));
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM users ORDER BY userid ASC');
